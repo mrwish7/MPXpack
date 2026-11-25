@@ -1,0 +1,24 @@
+# Build output (CMake build trees, incl. FetchContent's _deps/)
+build/
+build-*/
+out/
+cmake-build-*/
+CMakeUserPresets.json
+
+# IDE / editor
+.vs/
+.vscode/
+.idea/
+*.user
+
+# Runtime config files the apps write next to the executable
+sender_config.ini
+receiver_config.ini
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Old vendored WavPack source trees — WavPack is now fetched by CMake
+# (see CMakeLists.txt). These local copies are unused and safe to delete.
+WavPack-master/
+wavpack-stream-master/
