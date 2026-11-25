@@ -19,7 +19,7 @@
 namespace mpx {
 
 // Orchestrates the receiver pipeline: network thread -> decode thread ->
-// miniaudio playback, per docs/phase2-plan.md section 3. Same
+// miniaudio playback. Same
 // mutex+condvar-everywhere simplification noted in sender_app.h.
 class ReceiverApp {
 public:

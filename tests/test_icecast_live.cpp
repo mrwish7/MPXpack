@@ -1,7 +1,7 @@
 // Exercises IcecastSourceClient (PUT) and IcecastRelayClient (GET) against a
 // REAL, user-supplied Icecast server — no audio hardware needed, uses the
-// synthetic signal generator. Validates the assumptions flagged in
-// docs/phase2-plan.md 2.5/2.6 that could only be confirmed empirically:
+// synthetic signal generator. Validates the design assumptions that could
+// only be confirmed empirically:
 // unchunked streaming PUT body acceptance, Content-Type handling, and the
 // relay client's block-sync resync on a GET response that starts mid-block.
 //

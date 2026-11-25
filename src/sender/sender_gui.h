@@ -11,8 +11,7 @@ namespace mpx {
 
 // Holds the ImGui widget state (text buffers, combo selection, etc.) that
 // has to persist across frames, since ImGui itself is immediate-mode and
-// doesn't own any state on its own. See docs/phase2-plan.md section 4 for
-// the layout this implements.
+// doesn't own any state on its own.
 class SenderGui {
 public:
     SenderGui();

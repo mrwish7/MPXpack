@@ -39,9 +39,9 @@ bool IcecastSourceClient::connect(const IcecastConfig& cfg) {
 
     // Icecast's PUT source handler typically does not respond until the
     // stream ends or an error occurs, so absence of a reply within this
-    // window is the expected success case, not a failure — see
-    // docs/phase2-plan.md 2.5 (flagged as verified in testing against the
-    // deployed Icecast version).
+    // window is the expected success case, not a failure (verified in
+    // testing against a deployed Icecast server — see
+    // tests/test_icecast_live.cpp).
     uint8_t buf[512];
     int n = socket_.recvSome(buf, sizeof(buf) - 1, 1500);
     if (n > 0) {

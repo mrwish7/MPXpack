@@ -10,7 +10,7 @@
 namespace mpx {
 
 // Holds the ImGui widget state that has to persist across frames — mirrors
-// SenderGui (see docs/phase2-plan.md section 4 for the layout).
+// SenderGui.
 class ReceiverGui {
 public:
     ReceiverGui();

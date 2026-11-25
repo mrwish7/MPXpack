@@ -34,8 +34,8 @@ constexpr int kEncodeSampleRateMid = 144000;  // intermediate option — more fi
 constexpr int kEncodeSampleRateHigh = kSampleRate;
 constexpr int kEncodeSampleRateDefault = kEncodeSampleRateLow;
 
-// Hybrid bits-per-sample range exposed in the GUI. See docs/phase2-plan.md
-// for the derivation of block_samples relative to this range. The GUI
+// Hybrid bits-per-sample range exposed in the GUI (see kBlockSamples below
+// and tests/test_block_sizing.cpp for how block size relates to it). The GUI
 // snaps to 0.1 steps within this range (see sender_gui.cpp) — the range
 // itself has no such granularity requirement.
 constexpr float kBpsMin = 2.2f;

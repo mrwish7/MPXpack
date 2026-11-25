@@ -80,7 +80,7 @@ enum class PreferredAudioBackend {
 
 // One entry from a device's native-format table. A value of 0 for
 // sample_rate/channels means "device accepts any" per miniaudio's
-// ma_device_info convention (see docs/phase2-plan.md 2.7).
+// ma_device_info convention.
 struct NativeFormat {
     int sample_rate = 0;
     int channels = 0;
@@ -89,7 +89,7 @@ struct NativeFormat {
 
 // Wraps miniaudio for exactly what this project needs: enumerate devices,
 // validate that a device natively supports our fixed 192kHz/mono/16-bit
-// format (no silent resampling — see docs/phase2-plan.md 2.7), and run a
+// format (no silent resampling — see supportsFormatNatively()), and run a
 // capture or playback callback at that format.
 class AudioDevice {
 public:
@@ -122,7 +122,7 @@ public:
     // conversion and channel duplication/summing — no filtering involved, so
     // no risk to the RDS subcarrier region. Sample-rate mismatches are the
     // one case that matters, since that goes through miniaudio's resampler
-    // (a real filter) instead. See docs/phase2-plan.md 2.7. `channels` is
+    // (a real filter) instead. `channels` is
     // kept in the signature for API clarity/future use, not currently used
     // to reject a device.
     static bool supportsFormatNatively(AudioDeviceKind kind, const std::string& device_id,

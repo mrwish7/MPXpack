@@ -2,8 +2,8 @@
 // miniaudio can see, along with its full native-format table, so you can
 // check whether a given device (e.g. a virtual audio cable) is actually
 // configured for 192kHz mono 16-bit before wiring it into mpx_sender/
-// mpx_receiver — see docs/phase2-plan.md 2.7 on why we insist on an exact
-// native match rather than silently resampling.
+// mpx_receiver — see audio_device.h on why we insist on an exact native
+// match rather than silently resampling.
 //
 // Usage: probe_audio_devices [default|wasapi|mme|dsound]
 // Optional backend override (Windows only — see PreferredAudioBackend),

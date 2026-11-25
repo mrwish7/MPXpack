@@ -1,7 +1,7 @@
 // In-process encode -> ByteRingBuffer -> decode round trip on a synthetic
 // signal, with no sockets involved. Isolates WavpackEncoder/WavpackDecoder
-// wrapper bugs from any transport-layer bugs (verification plan step 2 in
-// docs/phase2-plan.md). Run at both selectable encode sample rates
+// wrapper bugs from any transport-layer bugs.
+// Run at both selectable encode sample rates
 // (128kHz default, 192kHz full-bandwidth option) since WavPack itself
 // hadn't been exercised at the low rate before that option was added.
 

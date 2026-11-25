@@ -1,6 +1,6 @@
 // Empirically measures actual per-block byte sizes out of WavpackEncoder at
 // each selectable bits-per-sample setting, to validate the block_samples=1536
-// derivation in docs/phase2-plan.md (assumed ~90 bytes of WavPack overhead on
+// choice (kBlockSamples in app_config.h; assumed ~90 bytes of WavPack overhead on
 // top of the entropy-coded payload). Run standalone, no audio hardware
 // needed — feeds a synthetic sweep straight into the encoder.
 

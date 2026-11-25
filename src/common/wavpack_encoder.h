@@ -43,12 +43,11 @@ public:
         // very_high_quality/extra_mode remain meaningful in both modes.
         bool lossless = false;
 
-        // Extra quality knobs, all off/library-default (see
-        // docs/phase2-plan.md for why they were left off in the shipped
-        // config: keeping per-block metadata size predictable). Exposed
-        // here for benchmarking (tests/test_quality_flags.cpp,
-        // tests/test_noise_floor_spectrum.cpp) — not yet wired into
-        // SenderConfig/the GUI.
+        // Extra quality knobs, all off/library-default here, which keeps
+        // per-block metadata size predictable. Benchmarked in
+        // tests/test_quality_flags.cpp and
+        // tests/test_noise_floor_spectrum.cpp. (SenderApp turns on
+        // very_high_quality — see sender_app.cpp.)
         bool high_quality = false;      // CONFIG_HIGH_FLAG
         bool very_high_quality = false; // CONFIG_HIGH_FLAG | CONFIG_VERY_HIGH_FLAG (WavPack sets both together)
         NoiseShaping noise_shaping = NoiseShaping::LibraryDefault;

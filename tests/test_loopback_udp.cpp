@@ -1,8 +1,7 @@
 // End-to-end UDP loopback test: encode -> fragment -> send over a real
 // 127.0.0.1 UDP socket -> receive -> reassemble -> decode, with a synthetic
 // packet-loss injector, to validate the "glitch and continue" resilience
-// policy from docs/phase2-plan.md (verification plan step 3) rather than a
-// crash/stall.
+// policy (see UdpReassembler in udp_framing.h) rather than a crash/stall.
 
 #include <atomic>
 #include <cstdio>

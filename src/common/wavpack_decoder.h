@@ -14,8 +14,8 @@ class ByteRingBuffer;
 // Wraps WavPack's OPEN_STREAMING decode mode (WavpackOpenFileInputEx64) to
 // decode a continuous, headerless, non-seekable live feed of WavPack blocks
 // pulled from a ByteRingBuffer that a network thread is filling. Corrupt or
-// incomplete blocks are handled internally by the library (see
-// docs/phase2-plan.md) — decode() simply returns fewer samples than
+// incomplete blocks are handled internally by the library — decode()
+// simply returns fewer samples than
 // requested when the source stalls; callers should treat that as "try
 // again", not a fatal error.
 class WavpackDecoder {

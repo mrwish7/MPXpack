@@ -198,7 +198,7 @@ int main() {
     }
 
     std::printf("\n(Single-threaded encode-only timing on this machine, 3s of audio per row.\n"
-                "'max block' matters for whether a config still fits one UDP datagram; see\n"
-                "docs/phase2-plan.md block-size derivation — kMaxUdpPacketBytes is 1200.)\n");
+                "'max block' matters for whether a config still fits one UDP datagram —\n"
+                "kMaxUdpPacketBytes is 1200.)\n");
     return 0;
 }

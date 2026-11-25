@@ -14,7 +14,7 @@ namespace mpx {
 // the connection as a raw (or chunked, if the server says so) byte stream.
 // We deliberately do not try to align on WavPack block boundaries here — a
 // fresh GET response can start mid-block, and WavpackDecoder's internal
-// block-sync scan (see docs/phase2-plan.md 2.6) is relied on to resync.
+// block-sync scan is relied on to resync.
 class IcecastRelayClient {
 public:
     bool connect(const IcecastConfig& cfg, int connect_timeout_ms = 5000);

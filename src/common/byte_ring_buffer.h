@@ -12,7 +12,7 @@ namespace mpx {
 // (consumer, via popBlocking). On overflow, push() drops the OLDEST bytes
 // already queued rather than blocking the producer or growing unboundedly —
 // this bounds live latency at the cost of an audible glitch under sustained
-// network stalls (see docs/phase2-plan.md, "Bounded latency policy").
+// network stalls.
 class ByteRingBuffer {
 public:
     explicit ByteRingBuffer(size_t capacity_bytes);

@@ -317,7 +317,7 @@ void ReceiverApp::networkThreadUdp() {
     // stream's actual encode rate has been detected (status_.stream_sample_
     // rate, populated by decodeThreadFunc) — 125 blocks/sec at
     // kBlockSamples=1536 / 192kHz, one packet per block (see
-    // docs/phase2-plan.md block-size derivation). Using this as a
+    // kBlockSamples in app_config.h). Using this as a
     // *permanent* assumption instead of the detected rate previously made
     // the loss-rate stat wildly wrong whenever the sender's encode rate is
     // below 192kHz: at the 128kHz default, 128000/1536 =~ 83.3 real
@@ -450,8 +450,8 @@ void ReceiverApp::networkThreadIcecast() {
         }
 
         // A fresh connection can start mid-block; WavpackDecoder's internal
-        // block-sync scan would resolve that on its own (see
-        // docs/phase2-plan.md 2.6), but closing/reopening the decoder
+        // block-sync scan would resolve that on its own, but
+        // closing/reopening the decoder
         // (decoder_needs_reopen_) is more direct and also lets a sender
         // restart's new encode_sample_rate (app_config.h) be re-detected.
         client.close();

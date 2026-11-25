@@ -19,8 +19,8 @@
 namespace mpx {
 
 // Orchestrates the sender pipeline: miniaudio capture -> encode thread ->
-// network thread, per the threading model in docs/phase2-plan.md section 3.
-// (Simplification vs. the original plan: all cross-thread handoffs here use
+// network thread.
+// (Design note: all cross-thread handoffs here use
 // mutex+condvar queues, not lock-free SPSC rings — at this data rate
 // (<=384kB/s raw PCM, <=120kB/s encoded) uncontended mutex overhead is
 // negligible next to the audio callback period, so the added complexity of

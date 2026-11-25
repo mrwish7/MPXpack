@@ -88,7 +88,7 @@ bool WavpackDecoder::open(ByteRingBuffer* source, int read_timeout_ms) {
     char error[80] = {0};
     // Deliberately NOT OPEN_NO_CHECKSUM: our transport can deliver corrupted
     // bytes that a file source never would, so we want WavPack's per-block
-    // checksum defense active (see docs/phase2-plan.md).
+    // checksum defense active.
     ctx_ = WavpackOpenFileInputEx64(&reader_, this, nullptr, error, OPEN_STREAMING, 0);
     if (!ctx_) {
         last_error_ = error;

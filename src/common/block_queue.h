@@ -13,7 +13,7 @@ namespace mpx {
 // stream) — used specifically for the sender's encoder->network handoff,
 // where UDP fragmentation needs WavPack block boundaries preserved. Same
 // drop-oldest-on-overflow bounded-latency policy as ByteRingBuffer (see
-// docs/phase2-plan.md, "Bounded latency policy").
+// byte_ring_buffer.h).
 class BlockQueue {
 public:
     explicit BlockQueue(size_t max_blocks) : max_blocks_(max_blocks) {}

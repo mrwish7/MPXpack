@@ -65,8 +65,7 @@ if(UNIX AND NOT APPLE)
 endif()
 
 # --- libsamplerate (high-quality sinc-interpolation sample rate conversion,
-#     used for the optional 144kHz encode path — see docs/phase2-plan.md and
-#     resampler.h) ---
+#     used for the optional 128/144kHz encode paths — see resampler.h) ---
 set(LIBSAMPLERATE_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(LIBSAMPLERATE_INSTALL OFF CACHE BOOL "" FORCE)
 

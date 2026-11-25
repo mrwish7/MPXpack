@@ -24,7 +24,7 @@ constexpr size_t kMaxUdpFragmentPayload = kMaxUdpPacketBytes - sizeof(UdpPacketH
 
 // Splits one encoded WavPack block into one or more ready-to-send UDP
 // datagrams (header + payload each). In the common case (see
-// docs/phase2-plan.md block-size derivation) this returns a single packet;
+// kBlockSamples in app_config.h) this returns a single packet;
 // fragmentation is a real, exercised path for the rare oversized block.
 std::vector<std::vector<uint8_t>> FragmentBlock(const uint8_t* data, size_t len, uint32_t seq);
 
@@ -32,7 +32,7 @@ std::vector<std::vector<uint8_t>> FragmentBlock(const uint8_t* data, size_t len,
 // ByteRingBuffer strictly in sequence order, holding a small look-ahead
 // window for reordered packets. A block that never completes within the
 // window is simply skipped (dropped) — this trades a brief audio glitch for
-// bounded latency, per the resilience policy in docs/phase2-plan.md.
+// bounded latency.
 class UdpReassembler {
 public:
     explicit UdpReassembler(size_t window = 4);

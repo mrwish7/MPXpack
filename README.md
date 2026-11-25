@@ -3,8 +3,7 @@
 Sender/receiver pair for streaming a 192kHz mono FM MPX composite signal (with
 RDS) over the internet, using WavPack hybrid lossy compression to cut the
 raw ~3072kbps PCM down to a configurable, much lower bitrate. Transport is
-either a direct UDP stream or an Icecast mount. See `docs/phase2-plan.md` for
-the full design rationale.
+either a direct UDP stream or an Icecast mount.
 
 Two executables share one static library (`mpx_common`):
 
@@ -172,11 +171,17 @@ test_icecast_live       # exercises the Icecast PUT/GET path against a REAL serv
 ## Third-party components
 
 Fetched automatically by CMake at configure time (see `cmake/FetchDeps.cmake`
-and the top-level `CMakeLists.txt`) — check each project's own repository
-for license terms:
+and the top-level `CMakeLists.txt`). None of their source is included in
+this repository. All are under permissive licenses, but if you distribute
+built binaries, include each project's license text alongside them (the
+BSD/zlib/MIT licenses require the copyright notice to be reproduced):
 
-- [WavPack](https://github.com/dbry/WavPack) — hybrid lossy/lossless audio codec
-- [GLFW](https://github.com/glfw/glfw) — windowing/OpenGL context
-- [Dear ImGui](https://github.com/ocornut/imgui) — GUI
-- [miniaudio](https://github.com/mackron/miniaudio) — cross-platform audio I/O
-- [libsamplerate](https://github.com/libsndfile/libsamplerate) — sample rate conversion
+- [WavPack](https://github.com/dbry/WavPack) — hybrid lossy/lossless audio codec (BSD-3-Clause)
+- [GLFW](https://github.com/glfw/glfw) — windowing/OpenGL context (zlib)
+- [Dear ImGui](https://github.com/ocornut/imgui) — GUI (MIT)
+- [miniaudio](https://github.com/mackron/miniaudio) — cross-platform audio I/O (public domain / MIT-0)
+- [libsamplerate](https://github.com/libsndfile/libsamplerate) — sample rate conversion (BSD-2-Clause)
+
+## License
+
+MPXpack is released under the MIT License — see [LICENSE](LICENSE).
